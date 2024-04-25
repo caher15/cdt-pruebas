@@ -12,8 +12,8 @@ class _MainScreensState extends State<MainScreens>
 {
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: (){}, 
-      child: const Text("Logout"));
+    return Scaffold(
+      backgroundColor: Colors.black,
+    );
   }
 }
