@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1018249852552",
+    "project_id": "upload-images-be2b8",
+    "storage_bucket": "upload-images-be2b8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1018249852552:android:f279b46d454a4984f2513d",
+        "android_client_info": {
+          "package_name": "com.uploadimages.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9YD8pcTyt9XjJBs_TdmXYF1s9fDK4tow"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
