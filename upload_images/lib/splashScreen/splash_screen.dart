@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:upload_images/authentication/singup_screen.dart';
 import 'package:upload_images/global/global.dart';
 import 'package:upload_images/mainScreens/main_screens.dart';
+import 'package:upload_images/mainScreens/menu_screen.dart';
 
 class MySplashScreen extends StatefulWidget {
   const MySplashScreen({Key? key}) : super(key: key);
@@ -24,7 +26,7 @@ class _MySplashScreenState extends State<MySplashScreen> {
           context,
           PageRouteBuilder(
             transitionDuration: const Duration(milliseconds: 800),
-            pageBuilder: (_, __, ___) => const MainScreens(),
+            pageBuilder: (_, __, ___) => const SingupScreen(),
             transitionsBuilder: (_, animation, __, child) {
               return FadeTransition(
                 opacity: animation,
