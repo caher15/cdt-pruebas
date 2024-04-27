@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:upload_images/pages/add_name_page.dart';
+import 'package:upload_images/pages/edit_name_page.dart';
+import 'package:upload_images/pages/home_page.dart';
 
 class MainScreens extends StatefulWidget 
 {
@@ -12,8 +15,13 @@ class _MainScreensState extends State<MainScreens>
 {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
+    return MaterialApp(
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomeLogin(),
+        '/add': (context) => const AddNamePage(),
+        '/edit': (context) => const EditNamePage(),  
+      },
     );
   }
 }
