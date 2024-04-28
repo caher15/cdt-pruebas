@@ -13,7 +13,7 @@ void main() async{
   runApp(MyApp(
     child: MaterialApp(
       title: 'CDT app',
-      theme: ThemeData(primaryColor: Colors.blue),
+      theme: ThemeData(primaryColor: Colors.blue, textSelectionTheme: TextSelectionThemeData( selectionColor: Colors.blue.shade300),),
       home: const MySplashScreen(),
       debugShowCheckedModeBanner: false,
 
