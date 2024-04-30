@@ -2,6 +2,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:upload_images/authentication/login_screen.dart';
 import 'package:upload_images/global/global.dart';
 import 'package:upload_images/mainScreens/menu_screen.dart';
 import 'package:upload_images/widgets/colors.dart';
@@ -42,12 +43,12 @@ class _SingupScreenState extends State<SingupScreen>
     }
     else
     {
-      saveDriverInfo();
+      saveUserInfo();
     }
 
   }
   
-saveDriverInfo() async {
+saveUserInfo() async {
     showDialog(
         context: context,
         barrierDismissible: false,
@@ -69,6 +70,7 @@ saveDriverInfo() async {
                 "id": firebaseUser.uid,
                 "name": nametextEditingController.text.trim(),
                 "email": emalitextEditingController.text.trim(),
+                "Location": locationtextEditingController.text.trim(),
                 "phone": phonetextEditingController.text.trim(),
             };
 
@@ -96,8 +98,6 @@ saveDriverInfo() async {
             child: Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
-        // This parent container has fixed width and
-        // height of 100 pixels.
         Expanded(
           child: Container(
             
@@ -109,15 +109,9 @@ saveDriverInfo() async {
                 alignment: Alignment.topCenter,
                 )
                 ),
-            // This OverflowBox imposes its own constraints of maxWidth
-            // and maxHeight of 200 pixels on its child which allows the
-            // child to overflow the parent container.
             child:  OverflowBox(
               maxWidth: 350,
               maxHeight: double.infinity,
-              // Without the OverflowBox, the child widget would be
-              // constrained to the size of the parent container
-              // and would not overflow the parent container.
               child: Padding(
                 padding: const EdgeInsets.only(top: 200, bottom: 20),
                 child: Container(
@@ -258,7 +252,7 @@ saveDriverInfo() async {
                       decoration:  InputDecoration(
                         labelText: "Contraseña",
                         hintText: "Ingresa tu contraseña",
-                        border: OutlineInputBorder(
+                        border: const OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(15)),
                           borderSide: BorderSide.none,
                         ),
@@ -294,7 +288,7 @@ saveDriverInfo() async {
                     TextButton(
                       onPressed: ()
                       {
-                        Navigator.push(context, MaterialPageRoute(builder: (c) => const MainScreen()));
+                        Navigator.push(context, MaterialPageRoute(builder: (c) => const LoginScreen()));
                       },
                       child: const Text(
                         "Already have an Account? Login here",

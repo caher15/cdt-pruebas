@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:upload_images/authentication/login_screen.dart';
 import 'package:upload_images/authentication/singup_screen.dart';
 import 'package:upload_images/global/global.dart';
 import 'package:upload_images/mainScreens/main_screens.dart';
@@ -22,11 +23,31 @@ class _MySplashScreenState extends State<MySplashScreen> {
   startTimer() {
     Timer(const Duration(seconds: 3), () async {
       // Check if the user is logged in
-      Navigator.pushReplacement(
+      
+      if (await fAuth.currentUser != null) {
+        
+        currentFirebaseUser = fAuth.currentUser!;
+        // Navigate to MainScreens with custom transition
+        Navigator.pushReplacement(
           context,
           PageRouteBuilder(
             transitionDuration: const Duration(milliseconds: 800),
-            pageBuilder: (_, __, ___) => const SingupScreen(),
+            pageBuilder: (_, __, ___) => const MainScreen(),
+            transitionsBuilder: (_, animation, __, child) {
+              return FadeTransition(
+                opacity: animation,
+                child: child,
+              );
+            },
+          ),
+        );       
+        } else {
+        // Navigate to LoginScreen if user is not logged in
+        Navigator.pushReplacement(
+          context,
+          PageRouteBuilder(
+            transitionDuration: const Duration(milliseconds: 800),
+            pageBuilder: (_, __, ___) => const LoginScreen(),
             transitionsBuilder: (_, animation, __, child) {
               return FadeTransition(
                 opacity: animation,
@@ -35,18 +56,7 @@ class _MySplashScreenState extends State<MySplashScreen> {
             },
           ),
         );
-      //if (await fAuth.currentUser != null) {
-        
-        //currentFirebaseUser = fAuth.currentUser!;
-        // Navigate to MainScreens with custom transition
-        
-      //} else {
-        // Navigate to LoginScreen if user is not logged in
-        // Navigator.pushReplacement(
-        //   context,
-        //   MaterialPageRoute(builder: (context) => const LoginScreen()),
-        // );
-      //}
+      }
     });
   }
 

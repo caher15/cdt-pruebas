@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:upload_images/widgets/colors.dart';
 
 class ProgressDialog extends StatelessWidget 
 {
@@ -23,7 +24,7 @@ class ProgressDialog extends StatelessWidget
                 const SizedBox(width: 6.0,),
 
                 const CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
+                  valueColor: AlwaysStoppedAnimation<Color>(AppColors.secondaryColor),
                 ),
 
                 const SizedBox(width: 26.0,),

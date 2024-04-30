@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:upload_images/firebase_options.dart';
 import 'package:upload_images/splashScreen/splash_screen.dart';
+import 'package:upload_images/tabPages/home_tab.dart';
 
 void main() async{
 
