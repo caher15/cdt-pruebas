@@ -63,7 +63,7 @@ class _MainScreenState extends State<MainScreen> with SingleTickerProviderStateM
           label: "Ubicacion",
           ),
           BottomNavigationBarItem(
-          icon: Icon(Icons.announcement_outlined),
+          icon: Icon(Icons.warning),
           label: "Avisos",
           ),
       ],

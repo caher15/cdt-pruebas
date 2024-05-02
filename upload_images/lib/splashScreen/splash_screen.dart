@@ -67,11 +67,11 @@ class _MySplashScreenState extends State<MySplashScreen> {
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+            begin: Alignment.bottomCenter,
+            end: Alignment.topRight,
             colors: [
-              Color.fromRGBO(123, 196, 235, 1),
-              Color.fromRGBO(45, 153, 189, 1),
+              Color.fromRGBO(219, 222, 241, 1),
+              Color.fromRGBO(130, 185, 250, 1),
             ],
           ),
         ),

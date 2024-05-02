@@ -210,7 +210,22 @@ class _LoginScreenState extends State<LoginScreen> {
                     TextButton(
                       onPressed: ()
                       {
-                        Navigator.push(context, MaterialPageRoute(builder: (c) => const SingupScreen()));
+                        Navigator.push(context, PageRouteBuilder(
+                          pageBuilder: (context, animation, secondaryAnimation) => const SingupScreen(),
+                          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                            var begin = const Offset(1.0, 0.0);  
+                            var end = Offset.zero;
+                            var curve = Curves.ease;
+
+                            var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+                            var offsetAnimation = animation.drive(tween);
+
+                            return SlideTransition(
+                              position: offsetAnimation,
+                              child: child,
+                            );
+                          },
+                        ));
                       },
                       child: const Text(
                         "New at CDT? SingUp Here",
